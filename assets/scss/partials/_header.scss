@@ -1,0 +1,41 @@
+header {
+    display: flex;
+    justify-content: center;
+    padding-top: 32px;
+    position: relative;
+    width: 100%;
+}
+
+header::before {
+    background: linear-gradient(290deg, #D6E6FE 0%, rgba(214, 252, 254, 0.00) 100%);
+    border-radius: 0px 0px 35px 35px;
+    content: '';
+    height: 640px;
+    position: absolute;
+    top: -32px;
+    width: 100%;
+    z-index: -1;
+}
+
+.logo {
+    height: 40px;
+    width: 40px;
+}
+
+@media screen and (min-width: 1440px) {
+    header {
+        justify-content: flex-start;
+        padding: 75px 0px 0px 140px;
+    }
+
+    header::before {
+        height: 737px;
+        left: 24px;
+        width: 978px;
+    }
+
+    .logo {
+        height: 64px;
+        width: 64px;
+    }
+}

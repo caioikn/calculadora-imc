@@ -1,0 +1,139 @@
+.limitacoes {
+    @include flex-column;
+    gap: 56px;
+    padding: 72px 24px 96px 24px;
+}
+
+.limitacoes__conteudo {
+    @include flex-column;
+    gap: 32px;
+    text-align: center;
+
+    h2 {
+        color: $gunmetal;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 110%;
+        letter-spacing: -1.6px;
+    }
+
+    p {
+        color: $dark-electric-blue;
+        line-height: 150%;
+    }
+}
+
+.limitacoes__itens {
+    @include flex-column;
+    gap: 16px;
+}
+
+.limitacoes__item {
+    @include flex-column;
+    background-color: $white;
+    border-radius: 16px;
+    box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+    gap: 16px;
+    padding: 24px;
+
+    p {
+        color: $dark-electric-blue;
+        line-height: 150%;
+    }
+}
+
+.limitacoes__icone {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    img {
+        width: 32px;
+    }
+
+    h4 {
+        color: $gunmetal;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: -1px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .limitacoes {
+        padding: 96px 40px 96px 40px;
+    }
+
+    .limitacoes__itens {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        column-gap: 15px;
+        row-gap: 24px;
+    }
+
+    .limitacoes__item {
+        padding: 32px;
+        width: 48%;
+    }
+
+    .limitacoes__item:last-child {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1440px) {
+    .limitacoes {
+        flex-direction: row;
+        margin: 0px 0px 0px 0px;
+        padding: 120px 140px 120px 140px;
+        position: relative;
+    }
+
+    .limitacoes::after {
+        background-image: url('../images/pattern-curved-line-right.svg');
+        background-repeat: no-repeat;
+        content: '';
+        height: 122px;
+        left: 305px;
+        position: absolute;
+        top: 371px;
+        width: 100%;
+    }
+
+    .limitacoes__conteudo {
+        gap: 35px;
+        text-align: start;
+
+        h2 {
+            font-size: 48px;
+            letter-spacing: -2.4px;
+        }
+    }
+
+    .limitacoes__itens {
+        flex-direction: column;
+    }
+
+    .limitacoes__item {
+        width: 365px;
+    }
+
+    .limitacoes__item:nth-child(2) {
+        margin-left: -65%;
+    }
+
+    .limitacoes__item:nth-child(3) {
+        margin-left: 24.5%;
+        margin-top: -47.5%;
+    }
+
+    .limitacoes__item:nth-child(4) {
+        margin-left: -110%;
+    }
+
+    .limitacoes__item:nth-child(5) {
+        margin-left: -20%;
+        margin-top: -58%;
+    }
+}

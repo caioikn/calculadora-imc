@@ -1,0 +1,344 @@
+main {
+    padding: 24px 24px 48px 24px;
+    width: 100%;
+}
+
+.info-calculadora {
+    @include flex-column;
+    gap: 24px;
+    margin-bottom: 48px;
+    text-align: center;
+
+    h1 {
+        color: $gunmetal;
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 110%;
+        letter-spacing: -2.4px;
+    }
+
+    p {
+        color: $dark-electric-blue;
+        line-height: 150%;
+    }
+}
+
+.container-calculadora {
+    background-color: $white;
+    border-radius: 16px;
+    box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+    max-width: 965px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.formulario-calculadora {
+    @include flex-column;
+    gap: 24px;
+
+    h2 {
+        color: $gunmetal;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: -1.2px;
+    }
+}
+
+.formulario__unidade {
+    display: flex;
+    justify-content: space-between;
+}
+
+.formulario__unidade__medida {
+    align-items: center;
+    display: flex;
+    gap: 18px;
+
+    input {
+        appearance: none;
+        border: 1px solid $borders;
+        border-radius: 50%;
+        cursor: pointer;
+        height: 31px;
+        outline: none;
+        position: relative;
+        width: 31px;
+
+        &::before {
+            background-color: hsla(227, 92%, 58%, 0.15);
+            border-radius: 50%;
+            content: '';
+            display: none;
+            height: 31px;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 31px;
+        }
+
+        &::after {
+            content: '';
+            background-color: $blue;
+            border-radius: 50%;
+            display: none;
+            height: 15px;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 15px;
+        }
+
+        &:checked::before {
+            display: block;
+        }
+
+        &:checked::after {
+            display: block;
+        }
+
+        &:hover {
+            border: 1px solid $blue;
+        }
+    }
+
+    label {
+        color: $gunmetal;
+        font-weight: 600;
+        line-height: 150%;
+    }
+}
+
+.formulario__info-metric {
+    @include flex-column;
+    gap: 16px;
+}
+
+.formulario__info-imperial {
+    @include flex-column;
+    display: none;
+    gap: 16px;
+}
+
+.formulario__info__campo-metric {
+    @include flex-column;
+    gap: 8px;
+
+    label {
+        color: $dark-electric-blue;
+        font-size: 14px;
+        grid-area: label;
+        line-height: 150%;
+    }
+}
+
+.formulario__info__campo-imperial {
+    column-gap: 16px;
+    display: grid;
+    grid-template-areas:
+        'label label label label'
+        'ft-st ft-st in-lbs in-lbs';
+    row-gap: 8px;
+
+    label {
+        color: $dark-electric-blue;
+        font-size: 14px;
+        grid-area: label;
+        line-height: 150%;
+    }
+
+    .ft-st {
+        grid-area: ft-st;
+    }
+
+    .in-lbs {
+        grid-area: in-lbs;
+    }
+}
+
+.formulario-altura,
+.formulario-peso {
+    align-items: center;
+    border: 1px solid $borders;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    padding: 20px 24px;
+
+    &:hover {
+        border: 1px solid $blue;
+    }
+
+    input {
+        border: none;
+        color: $gunmetal;
+        font-family: 'Inter', sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: -1.2px;
+        width: 100%;
+
+        &::placeholder {
+            color: $gunmetal;
+            opacity: 0.25;
+        }
+    }
+
+    span {
+        color: $blue;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: -1.2px;
+    }
+}
+
+.formulario__info__campo-metric {
+    display: flex;
+}
+
+.formulario__info__campo-imperial {
+    display: none;
+}
+
+.formulario__apresentacao {
+    @include flex-column;
+    background: linear-gradient(90deg, #345FF6 0%, #587DFF 100%);
+    border-radius: 16px;
+    color: $white;
+    display: flex;
+    gap: 16px;
+    padding: 32px;
+
+    h3 {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+.formulario__resultado {
+    background: linear-gradient(90deg, #345FF6 0%, #587DFF 100%);
+    border-radius: 16px;
+    color: $white;
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px;
+
+    p {
+        font-size: 14px;
+        line-height: 150%;
+
+        strong {
+            font-weight: 700;
+        }
+    }
+}
+
+.formulario__resultado__titulo {
+    @include flex-column;
+    gap: 8px;
+
+    h3 {
+        font-weight: 600;
+        line-height: 150%;
+    }
+
+    span {
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 110%;
+        letter-spacing: -2.4px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        padding: 40px 40px 96px 40px;
+    }
+
+    .info-calculadora {
+        margin-bottom: 40px;
+    }
+
+    .container-calculadora {
+        padding: 32px;
+    }
+
+    .formulario-calculadora {
+        gap: 32px;
+    }
+
+    .formulario__unidade {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 24px;
+    }
+
+    .formulario__info-metric {
+        flex-direction: row;
+        gap: 24px;
+    }
+
+    .formulario__info__campo-imperial {
+        column-gap: 24px;
+    }
+
+    .formulario__apresentacao {
+        border-radius: 16px 999px 999px 16px;
+    }
+
+    .formulario__resultado {
+        align-items: center;
+        border-radius: 16px 999px 999px 16px;
+        flex-direction: row;
+        gap: 24px;
+        justify-content: space-between;
+        width: 100%;
+
+        p {
+            width: 50%;
+        }
+    }
+
+    .formulario__resultado__titulo {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    main {
+        align-items: center;
+        display: flex;
+        gap: 32px;
+        padding: 28px 140px 150px 140px;
+    }
+
+    .info-calculadora {
+        text-align: start;
+        padding-right: 100px;
+        width: 564px;
+
+        h1 {
+            font-size: 64px;
+            letter-spacing: -3.2px;
+        }
+
+        p {
+            width: 465px;
+        }
+    }
+
+    .formulario__resultado__titulo {
+        span {
+            font-size: 64px;
+            letter-spacing: -3.2px;
+        }
+    }
+}
